@@ -1,0 +1,12 @@
+Package: sNoSeR
+Type: Package
+Title: R functions to analyse southern North Sea fish stocks and fisheries
+Version: 0.1.0
+Author: Moritz Staebler
+Maintainer: Moritz Staebler <moritz.staebler@posteo.de>
+Description: The package contains functions to conveniently handle IBTS and BTS
+    data sets.
+Imports: magrittr
+License: GPL
+LazyData: TRUE
+RoxygenNote: 5.0.1
