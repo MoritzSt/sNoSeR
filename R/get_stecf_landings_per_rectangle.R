@@ -17,8 +17,6 @@
 #' @param format_long A logical defining if you want the data to be transposed
 #' to long format. Is do, specify \code{format_long <- 'T'}.
 
-# add a test line here
-
 get_stecf_landings_per_rectangle <- function(file, nose_only, deep, fdf, format_long) {
   dat <- read.csv(file = file, stringsAsFactors = FALSE)  # load landings data from file
   dat$X <- NULL
