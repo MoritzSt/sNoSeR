@@ -4,20 +4,24 @@
 \alias{aggr_share_of}
 \title{Calculates the share of something in an entirety of a dataframe.}
 \usage{
-aggr_share_of(data, id.vars, entirety, case, value)
+aggr_share_of(data, id.vars, col, case, value)
+}
+\arguments{
+\item{data}{Dataset to use.}
+
+\item{id.vars}{A list of the variables to split data frame by, as as.quoted variables,
+a formula or character vector (similar ddply in package plyr).}
+
+\item{col}{Variable name that defines the case for which share is
+to be calculated.}
+
+\item{case}{Name of the case for which share in the entirety is to be calculated.}
+
+\item{value}{What to aggregate, i.e. calculate the share of?}
 }
 \description{
 \code{aggr_share_of} calculate the share of a group of entries in the
- entirety of entries one level above, such as the share of plaice in
- landings of a particular fishing fleet per year.
-}
-\details{
-@param data Dataset to use.
- @param id.vars A list of the variables to split data frame by, as as.quoted variables,
- a formula or character vector (similar ddply in package plyr).
- @param entirety Variable name that defines the case for which share is
- to be calculated.
- @param case Name of the case for which share in the entirety is to be calculated.
- @param value What to aggregate, i.e. calculate the share of?
+entirety of entries one level above, such as the share of plaice in
+landings of a particular fishing fleet per year.
 }
 

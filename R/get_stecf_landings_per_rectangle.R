@@ -16,6 +16,7 @@
 #' value should be 'F' to avoid doubling data occurence.
 #' @param format_long A logical defining if you want the data to be transposed
 #' to long format. Is do, specify \code{format_long <- 'T'}.
+#' @export
 
 
 get_stecf_landings_per_rectangle <- function(file, nose_only, deep, fdf, format_long) {
