@@ -6,9 +6,10 @@
 #' is provided.
 #'
 #' @param data Dataset to use for the plotting.
-#' @param parameter Name of the parameters that are to be plot.
-#' @param ices_rectangles Name of the column where location as ICES rectangles
-#' are stored in the dataset.
+#' @param parameter A character string holding the name of the parameters
+#' that are to be plot.
+#' @param ices_rectangles A character string with the name of the column
+#' where location as ICES rectangles are stored in the dataset.
 #' @param visual A character string defining how you want the value of the
 #' parameter to be represented. Use \code{visual = 'circles'} for point
 #' size \code{cex} to represent values, use \code{visual = 'colour'} for

@@ -9,10 +9,11 @@ plot_factor_in_map(data, parameter, ices_rectangles, visuals = "colour")
 \arguments{
 \item{data}{Dataset to use for the plotting.}
 
-\item{parameter}{Name of the parameters that are to be plot.}
+\item{parameter}{A character string holding the name of the parameters
+that are to be plot.}
 
-\item{ices_rectangles}{Name of the column where location as ICES rectangles
-are stored in the dataset.}
+\item{ices_rectangles}{A character string with the name of the column
+where location as ICES rectangles are stored in the dataset.}
 
 \item{visual}{A character string defining how you want the value of the
 parameter to be represented. Use \code{visual = 'circles'} for point
