@@ -14,6 +14,7 @@
 #' parameter to be represented. Use \code{visual = 'circles'} for point
 #' size \code{cex} to represent values, use \code{visual = 'colour'} for
 #' colour to represent values. Default is \code{visual = 'colour'}.
+#' @export
 
 plot_factor_in_map <- function(data, parameter, ices_rectangles, visuals = 'colour') {
 

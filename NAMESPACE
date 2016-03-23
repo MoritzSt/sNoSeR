@@ -2,5 +2,6 @@
 
 export(aggr_share_of)
 export(get_stecf_landings_per_rectangle)
+export(plot_factor_in_map)
 import(dplyr)
 importFrom(magrittr,"%>%")
