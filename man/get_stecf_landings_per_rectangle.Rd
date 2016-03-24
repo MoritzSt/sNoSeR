@@ -4,7 +4,8 @@
 \alias{get_stecf_landings_per_rectangle}
 \title{Get and convert STECF landings and effort per rectangle data}
 \usage{
-get_stecf_landings_per_rectangle(file, nose_only, deep, fdf, format_long)
+get_stecf_landings_per_rectangle(file, nose_only, deep = FALSE, fdf = FALSE,
+  format_long = TRUE)
 }
 \arguments{
 \item{file}{Define location where STECF landings per rectangle data is stored
@@ -15,14 +16,14 @@ document_library/get_file?uuid=015650e2-8d27-4c69-922c-2a15ba4d8b5a&groupId=4380
 North Sea (ICES area IV) only (which is STECF reg gear code 3B in annex IIA).}
 
 \item{deep}{A logical indicating if you want data of SPECON 'DEEP' to be
-included. Standard value should be 'F' to avoid doubling data occurence.}
+included. Default value is \code{fdf = FALSE} to avoid doubling data occurence.}
 
 \item{fdf}{A logical indicating if you want data of 'fully documented
-fisheries' to be included, such as 'FDFBAL', 'FDFIIA' and 'FDFIIC'.Standard
-value should be 'F' to avoid doubling data occurence.}
+fisheries' to be included, such as 'FDFBAL', 'FDFIIA' and 'FDFIIC'. Default
+value is \code{deep = FALSE} to avoid doubling data occurence.}
 
 \item{format_long}{A logical defining if you want the data to be transposed
-to long format. Is do, specify \code{format_long <- 'T'}.}
+to long format. This is the case by default, thus \code{format_long <- TRUE}.}
 }
 \description{
 \code{get_stecf_landings_per_rectangle} takes the downloaded STEFC data and
