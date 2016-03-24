@@ -51,7 +51,7 @@ get_stecf_landings_per_rectangle <- function(file, nose_only, deep = FALSE, fdf 
       as.character(seq(from = 2003, length.out = length(names(dat)[grep(pattern = '2',
       x = names(dat), ignore.case = FALSE)])))  # replace year names
 
-    dat2 <- melt(data = dat, id.vars = c(names(dat)[-grep(pattern = '2', x = names(dat))]) )
+    dat2 <- reshape2::melt(data = dat, id.vars = c(names(dat)[-grep(pattern = '2', x = names(dat))]) )
     names(dat2)[which(names(dat2)=='variable')]  <- 'year'
     names(dat2)[which(names(dat2)=='value')]  <- 'landings'
 
