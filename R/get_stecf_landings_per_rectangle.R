@@ -53,7 +53,6 @@ get_stecf_landings_per_rectangle <- function(file, nose_only, deep = FALSE, fdf 
 
     dat2 <- reshape2::melt(data = dat, id.vars = c(names(dat)[-grep(pattern = '2', x = names(dat))]) )
     names(dat2)[which(names(dat2)=='variable')]  <- 'year'
-    names(dat2)[which(names(dat2)=='value')]  <- 'landings'
 
   }
   landings <- as.data.frame(dat2)  # return landings
