@@ -24,9 +24,27 @@ get_stecf_landings_per_rectangle <- function(file, nose_only, deep = FALSE, fdf 
   dat <- read.csv(file = file, stringsAsFactors = FALSE)  # load landings data from file
   dat$X <- NULL
   names(dat) <- tolower(names(dat))
+  names(dat) <- gsub(x = names(dat),
+                          pattern = "\\.",
+                          replacement = "_")
+
   if(nose_only == T) {  # subset data for the greater North Sea, if intended
-    dat <- dat[dat$annex == 'IIA',]
-    dat <- dat[dat$reg_area_cod == '3B2',]
+    if(is.element('IIA', unique(dat$annex)) ) { dat <- dat[dat$annex == 'IIA',]}
+    if(is.element('IIa', unique(dat$annex)) ) { dat <- dat[dat$annex == 'IIa',]}
+
+    if(is.element('3b', unique(dat$reg_area_cod)) ) { dat <- dat[dat$reg_area_cod == '3b',]}
+    if(is.element('3B', unique(dat$reg_area_cod)) ) { dat <- dat[dat$reg_area_cod == '3B',]}
+    if(is.element('3b2', unique(dat$reg_area_cod)) ) { dat <- dat[dat$reg_area_cod == '3b2',]}
+    if(is.element('3B2', unique(dat$reg_area_cod)) ) { dat <- dat[dat$reg_area_cod == '3B2',]}
+
+    if(!is.element('IIA', unique(dat$annex)) &
+    !is.element('IIa', unique(dat$annex)) &
+    !is.element('3b', unique(dat$reg_area_cod)) &
+    !is.element('3B', unique(dat$reg_area_cod))  &
+    !is.element('3b2', unique(dat$reg_area_cod)) &
+    !is.element('3B2', unique(dat$reg_area_cod)) ) {
+      warnings('Could not identify North Sea data from Annex and Reg Gear Code!')
+    }
   }
 
   # remove various specons from dataset ot avoid doubled data
@@ -54,7 +72,7 @@ get_stecf_landings_per_rectangle <- function(file, nose_only, deep = FALSE, fdf 
 
     dat2 <- reshape2::melt(data = dat, id.vars = c(names(dat)[-grep(pattern = '2', x = names(dat))]) )
     names(dat2)[which(names(dat2)=='variable')]  <- 'year'
-
+    dat2$year <- as.integer(as.character(dat2$year))
   }
   landings <- as.data.frame(dat2)  # return landings
 }
