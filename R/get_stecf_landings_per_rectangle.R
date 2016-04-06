@@ -18,7 +18,6 @@
 #' to long format. This is the case by default, thus \code{format_long <- TRUE}.
 #' @export
 
-# Do a test change here.
 
 get_stecf_landings_per_rectangle <- function(file, nose_only, deep = FALSE, fdf = FALSE, format_long = TRUE) {
   dat <- read.csv(file = file, stringsAsFactors = FALSE)  # load landings data from file
